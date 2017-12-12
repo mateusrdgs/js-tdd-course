@@ -1,28 +1,34 @@
 /* eslint-env mocha */
 
 const chai = require('chai');
+const dirtyChai = require('dirty-chai');
+const calc = require('../src/index');
+
+chai.use(dirtyChai);
 
 const { expect } = chai;
 
-describe('Main', () => {
-  let arr;
-  beforeEach(() => {
-    arr = [1, 2, 3];
-  });
-  it('should to be an array', () => { // smoke test
-    expect(arr).to.be.an('array');
-  });
-  it('should have a size of 4 when a value is pushed', () => {
-    arr.push(4);
-    expect(arr).to.have.lengthOf(4);
-  });
-  it('should remove the value 3 when the array is popped', () => {
-    arr.pop();
-    expect(arr).to.not.include(3);
-  });
-  it('should have a size of 2 when the array is popped', () => {
-    arr.pop();
-    expect(arr).to.have.lengthOf(2);
+describe('Calc', () => {
+  describe('smoke tests', () => {
+    it('should exists the calc lib', () => {
+      expect(calc).to.exist();
+    });
+    it('should exists the method sum', () => {
+      expect(calc.sum).to.exist();
+      expect(calc.sum).to.be.a('function');
+    });
+    it('should exists the method sub', () => {
+      expect(calc.sub).to.exist();
+      expect(calc.sub).to.be.a('function');
+    });
+    it('should exists the method mult', () => {
+      expect(calc.mult).to.exist();
+      expect(calc.mult).to.be.a('function');
+    });
+    it('should exists the method div', () => {
+      expect(calc.div).to.exist();
+      expect(calc.div).to.be.a('function');
+    });
   });
 });
 
