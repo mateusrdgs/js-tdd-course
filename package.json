@@ -8,6 +8,10 @@
     "library"
   ],
   "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepublish": "yarn run lint"
+  },
   "repository": "git@github.com:mateusrdgs/js-tdd-course.git",
   "author": "Mateus Rodrigues <devrdgs@gmail.com> (https://mateusrdgs.com.br/)",
   "license": "MIT",
@@ -18,6 +22,7 @@
   "devDependencies": {
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0"
+    "eslint-plugin-import": "^2.8.0",
+    "husky": "^0.14.3"
   }
 }
