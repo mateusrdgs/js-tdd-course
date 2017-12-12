@@ -1,0 +1,18 @@
+{
+  "name": "js-tdd-course",
+  "version": "1.0.0",
+  "description": "Minha biblioteca do curso de JS com TDD na prática",
+  "keywords": [
+    "js",
+    "tdd",
+    "library"
+  ],
+  "main": "index.js",
+  "repository": "git@github.com:mateusrdgs/js-tdd-course.git",
+  "author": "Mateus Rodrigues <devrdgs@gmail.com> (https://mateusrdgs.com.br/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mateusrdgs/js-tdd-course/issues"
+  },
+  "homepage": "https://github.com/mateusrdgs/js-tdd-course#readme"
+}
