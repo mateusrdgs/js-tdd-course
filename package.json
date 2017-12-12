@@ -10,7 +10,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "prepublish": "yarn run lint"
+    "prepublish": "yarn run lint",
+    "test": "./node_modules/.bin/mocha tests/**/*.js"
   },
   "repository": "git@github.com:mateusrdgs/js-tdd-course.git",
   "author": "Mateus Rodrigues <devrdgs@gmail.com> (https://mateusrdgs.com.br/)",
@@ -20,9 +21,11 @@
   },
   "homepage": "https://github.com/mateusrdgs/js-tdd-course#readme",
   "devDependencies": {
+    "chai": "^4.1.2",
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "husky": "^0.14.3"
+    "husky": "^0.14.3",
+    "mocha": "^4.0.1"
   }
 }
