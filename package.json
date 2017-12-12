@@ -11,7 +11,8 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepublish": "yarn run lint",
-    "test": "./node_modules/.bin/mocha tests/**/*.js"
+    "test": "./node_modules/.bin/mocha tests/**/*.js",
+    "test:watch": "yarn run test --watch"
   },
   "repository": "git@github.com:mateusrdgs/js-tdd-course.git",
   "author": "Mateus Rodrigues <devrdgs@gmail.com> (https://mateusrdgs.com.br/)",
