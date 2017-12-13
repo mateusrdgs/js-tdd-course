@@ -10,7 +10,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "prepublish": "yarn run lint && yarn run test:coverage",
+    "prepush": "yarn run lint && yarn run test:coverage",
     "test": "./node_modules/.bin/mocha tests/**/*.js --require babel-register",
     "test:coverage": "nyc yarn test",
     "test:watch": "yarn run test --watch"
