@@ -10,9 +10,22 @@
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "prepublish": "yarn run lint",
+    "prepush": "yarn run lint",
     "test": "./node_modules/.bin/mocha tests/**/*.js --require babel-register",
-    "test:watch": "yarn run test --watch"
+    "test:watch": "yarn run test --watch",
+    "test:coverage": "nyc yarn test"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 80,
+    "functions": 80,
+    "exclude": [
+      "tests/**"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ]
   },
   "repository": "git@github.com:mateusrdgs/js-tdd-course.git",
   "author": "Mateus Rodrigues <devrdgs@gmail.com> (https://mateusrdgs.com.br/)",
@@ -30,7 +43,8 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "husky": "^0.14.3",
-    "mocha": "^4.0.1"
+    "mocha": "^4.0.1",
+    "nyc": "^11.3.0"
   },
   "dependencies": {}
 }
