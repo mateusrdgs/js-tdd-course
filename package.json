@@ -10,13 +10,22 @@
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "prepublish": "yarn run lint",
-    "test": "./node_modules/.bin/mocha tests/**/*.js",
+    "prepublish": "yarn run lint && yarn test:coverage",
+    "test": "./node_modules/.bin/mocha tests/**/*.js --require babel-register",
     "test:coverage": "nyc yarn test",
     "test:watch": "yarn run test --watch"
   },
   "nyc": {
-    "reporter": ["text", "html"]
+    "check-coverage": true,
+    "functions": 80,
+    "lines": 80,
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
   },
   "repository": "git@github.com:mateusrdgs/js-tdd-course.git",
   "author": "Mateus Rodrigues <devrdgs@gmail.com> (https://mateusrdgs.com.br/)",
@@ -26,12 +35,16 @@
   },
   "homepage": "https://github.com/mateusrdgs/js-tdd-course#readme",
   "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
     "chai": "^4.1.2",
+    "dirty-chai": "^2.0.1",
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "husky": "^0.14.3",
     "mocha": "^4.0.1",
     "nyc": "^11.3.0"
-  }
+  },
+  "dependencies": {}
 }

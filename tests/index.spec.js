@@ -1,28 +1,29 @@
 /* eslint-env mocha */
 
-const chai = require('chai');
+import * as chai from 'chai';
+import dirtyChai from 'dirty-chai';
+import FizzBuzz from '../src/index';
 
 const { expect } = chai;
 
-describe('Main', () => {
-  let arr;
-  beforeEach(() => {
-    arr = [1, 2, 3];
+chai.use(dirtyChai);
+
+describe('Calc', () => {
+  it('should return \'Fizz\' when multiple of 3', () => {
+    expect(FizzBuzz(3)).to.be.equal('Fizz');
+    expect(FizzBuzz(6)).to.be.equal('Fizz');
   });
-  it('should to be an array', () => { // smoke test
-    expect(arr).to.be.an('array');
+  it('should return \'Buzz\' when multiple of 5', () => {
+    expect(FizzBuzz(5)).to.be.equal('Buzz');
+    expect(FizzBuzz(10)).to.be.equal('Buzz');
   });
-  it('should have a size of 4 when a value is pushed', () => {
-    arr.push(4);
-    expect(arr).to.have.lengthOf(4);
+  it('should return \'FizzBuzz\' when multiple of 3 and 5', () => {
+    expect(FizzBuzz(15)).to.be.equal('FizzBuzz');
   });
-  it('should remove the value 3 when the array is popped', () => {
-    arr.pop();
-    expect(arr).to.not.include(3);
+  it('should return the parameter value when the number isn\'t multiple of neither 3 or 5 ', () => {
+    expect(FizzBuzz(7)).to.be.equal(7);
   });
-  it('should have a size of 2 when the array is popped', () => {
-    arr.pop();
-    expect(arr).to.have.lengthOf(2);
+  it('should return 0 when 0', () => {
+    expect(FizzBuzz(0)).to.be.equal(0);
   });
 });
-
